@@ -1,8 +1,10 @@
 package logz
 
-// example of wrapping a logging library, providing a global logging
-// endpoint (to stderr) and a configurable service
-// worth it to wrap, since api is nearly 1:1 with the wrapped library?
+// quick example of a package that lives in the monorepo, and wraps an
+// external library to (a) provide some common configuration and (b)
+// insulate app code from directly depending on its api. while (a) may
+// be useful to reduce boilerplate code in the services, the benefit
+// of (b) depends on which lib is being wrapped, its surface area, etc.
 
 import (
 	"log"
