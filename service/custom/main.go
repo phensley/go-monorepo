@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/phensley/go-bar/v3"
 	"github.com/phensley/go-monorepo/pkg/usebar"
 )
@@ -10,4 +12,6 @@ import (
 func main() {
 	usebar.UseBar()
 	bar.DoBar()
+
+	fmt.Println("pill is", Placebo)
 }
