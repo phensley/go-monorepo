@@ -1,5 +1,5 @@
 TOP := $(shell pwd)
-SERVICES := echo time custom
+SERVICES := echo time custom lagged
 all: services
 
 services: $(SERVICES)
