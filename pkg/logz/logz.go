@@ -10,10 +10,8 @@ import (
 	"go.uber.org/zap"
 )
 
-// Service ..
-type Service struct {
-	logger *zap.Logger
-}
+// LogFunc for forwarding calls directly to internal logger
+type LogFunc = func(msg string, fields ...Field)
 
 // Field ..
 type Field = zap.Field
@@ -21,8 +19,16 @@ type Field = zap.Field
 // Option ..
 type Option = zap.Option
 
+// Service ..
+type Service struct {
+	logger *zap.Logger
+	Info   LogFunc
+}
+
 var (
 	svc *Service
+	// Info ..
+	Info LogFunc
 )
 
 var (
@@ -40,6 +46,7 @@ func init() {
 	if err != nil {
 		log.Fatalf("Failed to initialize static logz service: %s", err)
 	}
+	Info = svc.Info
 }
 
 // NewService ..
@@ -50,15 +57,6 @@ func NewService(options ...Option) (*Service, error) {
 	}
 	return &Service{
 		logger: logger,
+		Info:   logger.Info,
 	}, nil
-}
-
-// Info ..
-func (s *Service) Info(msg string, fields ...Field) {
-	s.logger.Info(msg, fields...)
-}
-
-// Info ..
-func Info(msg string, fields ...Field) {
-	svc.Info(msg, fields...)
 }
