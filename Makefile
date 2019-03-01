@@ -1,5 +1,5 @@
 TOP := $(shell pwd)
-SERVICES := echo time
+SERVICES := echo time custom
 all: services
 
 services: $(SERVICES)
@@ -10,3 +10,6 @@ tidy:
 %: service/%
 	mkdir -p bin
 	cd $(TOP)/service/$@; go build -o $(TOP)/bin/$@
+
+clean:
+	$(foreach s,$(SERVICES),rm -f $(TOP)/bin/$(s);)
