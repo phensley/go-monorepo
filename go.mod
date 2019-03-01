@@ -3,6 +3,7 @@ module github.com/phensley/go-monorepo
 go 1.12
 
 require (
+	github.com/phensley/go-bar v0.0.0-20190220181853-89fb5f5b022f
 	github.com/pkg/errors v0.8.1 // indirect
 	github.com/stretchr/testify v1.3.0 // indirect
 	go.uber.org/atomic v1.3.2 // indirect

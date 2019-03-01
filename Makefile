@@ -1,5 +1,5 @@
 TOP := $(shell pwd)
-SERVICES := echo time
+SERVICES := echo time custom
 all: services
 
 services: $(SERVICES)
