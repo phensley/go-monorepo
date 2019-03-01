@@ -1,5 +1,7 @@
 TOP := $(shell pwd)
 SERVICES := echo time custom lagged
+GOBIN := $(TOP)/bin
+
 all: services
 
 services: $(SERVICES)
@@ -8,8 +10,8 @@ tidy:
 	$(foreach s,$(SERVICES),cd $(TOP)/service/$(s);go mod tidy;cd $(TOP);)
 
 %: service/%
-	mkdir -p bin
-	cd $(TOP)/service/$@; go build -o $(TOP)/bin/$@
+	cd $(TOP)/service/$@; GOBIN=$(GOBIN) go install -v ...
 
-clean:
-	$(foreach s,$(SERVICES),rm -f $(TOP)/bin/$(s);)
+clean: $(GOBIN)
+	rm -f $(GOBIN)/*
+	rmdir $(GOBIN)
