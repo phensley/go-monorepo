@@ -1,13 +1,12 @@
-
+TOP := $(shell pwd)
 SERVICES := echo time
 all: services
 
 services: $(SERVICES)
 
 tidy:
-	$(foreach s,$(SERVICES),cd service/$(s);go mod tidy;cd ../..;)
+	$(foreach s,$(SERVICES),cd $(TOP)/service/$(s);go mod tidy;cd $(TOP);)
 
 %: service/%
 	mkdir -p bin
-	cd service/$@; go build -o ../../bin/$@
-
+	cd $(TOP)/service/$@; go build -o $(TOP)/bin/$@
