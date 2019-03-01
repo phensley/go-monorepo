@@ -3,7 +3,6 @@ github.com/phensley/go-bar v0.0.0-20190220181853-89fb5f5b022f h1:hLB1WgzfQ3wv1/4
 github.com/phensley/go-bar v0.0.0-20190220181853-89fb5f5b022f/go.mod h1:5st14JUQO/3FoE/6TuQt0MFVLKvEY0dtUGpA5SUMyxE=
 github.com/phensley/go-bar/v3 v3.0.0 h1:XJ4w04uqaZVJDJtzqqqqHw7aPE0WnE/aGexQxiZbezs=
 github.com/phensley/go-bar/v3 v3.0.0/go.mod h1:q7kZGnF+CrnUz2RwTTR0gZ6Q/5NnT3NsRZQ/YoU1D08=
-github.com/phensley/go-monorepo v0.0.3 h1:WOS8yp/DTx1DspNC527+B/058IBxoduyMocwqwQLEhk=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
